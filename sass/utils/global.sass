@@ -1,0 +1,122 @@
+//----------------------IMPORTS----------------------//
+@import utils/mixins
+
+//----------------------VARS----------------------//
+$color-white: #ffffff
+$color-black: #000000
+$color-darkblue: #162831
+$color-lightblue: #018ABE
+
+$font-size: 16px
+$font-family: sans-serif
+
+$transition: 0.3s all ease-in-out
+
+$container: 1300px
+
+//----------------------ANIMATIONS----------------------//	
+@keyframes fadeAnimation
+	0%
+		opacity: 1
+	50%
+		opacity: 0.65
+	100%
+		opacity: 1
+
+@keyframes leftLeafAnimation
+	0%
+		transform: translateY(-50%) translateX(0px)
+	25%
+		transform: translateY(-50%) translateX(-30px)
+	50%
+		transform: translateY(-50%) translateX(0px)
+	75%
+		transform: translateY(-50%) translateX(-15px)
+	100%
+		transform: translateY(-50%) translateX(0px)
+
+@keyframes rightLeafAnimation
+	0%
+		transform: translateY(-50%) translateX(0px)
+	25%
+		transform: translateY(-50%) translateX(30px)
+	50%
+		transform: translateY(-50%) translateX(0px)
+	75%
+		transform: translateY(-50%) translateX(15px)
+	100%
+		transform: translateY(-50%) translateX(0px)
+
+//----------------------GLOBAL STYLES----------------------//
+*,
+*::after,
+*::before
+	box-sizing: border-box
+
+body
+	overflow-x: hidden
+
+svg path
+	color: currentColor
+	stroke: inherit
+	fill: inherit
+
+a
+	color: inherit
+
+body,
+html
+	height: 100%
+	color: $color-white
+	background: $color-darkblue
+	@include font('proximanova', 16, 300)
+	line-height: 1.4
+
+.wrapper
+	@include container($container)
+
+.title
+	@include font('El Messiri', 42, 700)
+	text-align: center
+	display: inline-block
+	position: relative
+	.leaf
+		font-size: inherit
+		position: absolute
+		color: $color-lightblue
+		top: 50%
+		transform: translateY(-50%)
+		transition: transform 0.3s ease-in-out
+		&--left
+			left: calc(-1em - 28px)
+		&--right
+			right: calc(-1em - 28px)
+	&:hover
+		.leaf--left
+			animation: leftLeafAnimation 0.7s ease-in-out
+		.leaf--right
+			animation: rightLeafAnimation 0.7s ease-in-out
+
+.leaf
+	width: 28px
+	height: 14px
+
+.btn
+	@include font('proximanova', 14, 600)
+	padding: 9px 15px
+	border-radius: 3px
+	line-height: 140%
+	letter-spacing: 1px
+	border: none
+	cursor: pointer
+	transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out
+	&--blue
+		color: $color-white
+		background: $color-lightblue
+	&--white
+		color: $color-lightblue
+		background: $color-white
+	&:hover
+		transform: scale(1.2)
+		border-radius: 15px
+		animation: fadeAnimation 0.3s ease-in-out
