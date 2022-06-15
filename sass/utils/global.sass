@@ -26,24 +26,28 @@ $container: 1300px
 @keyframes leftLeafAnimation
 	0%
 		transform: translateY(-50%) translateX(0px)
-	25%
-		transform: translateY(-50%) translateX(-30px)
-	50%
+	5%
+		transform: translateY(-50%) translateX(-1em)
+	10%
 		transform: translateY(-50%) translateX(0px)
-	75%
-		transform: translateY(-50%) translateX(-15px)
+	15%
+		transform: translateY(-50%) translateX(-0.5em)
+	20%
+		transform: translateY(-50%) translateX(0px)
 	100%
 		transform: translateY(-50%) translateX(0px)
 
 @keyframes rightLeafAnimation
 	0%
 		transform: translateY(-50%) translateX(0px)
-	25%
-		transform: translateY(-50%) translateX(30px)
-	50%
+	5%
+		transform: translateY(-50%) translateX(1em)
+	10%
 		transform: translateY(-50%) translateX(0px)
-	75%
-		transform: translateY(-50%) translateX(15px)
+	15%
+		transform: translateY(-50%) translateX(0.5em)
+	20%
+		transform: translateY(-50%) translateX(0px)
 	100%
 		transform: translateY(-50%) translateX(0px)
 
@@ -92,18 +96,17 @@ html
 		transform: translateY(-50%)
 		transition: transform 0.3s ease-in-out
 		&--left
-			left: calc(-1em - 28px)
+			left: calc(-2em)
 		&--right
-			right: calc(-1em - 28px)
-	&:hover
-		.leaf--left
-			animation: leftLeafAnimation 0.7s ease-in-out
-		.leaf--right
-			animation: rightLeafAnimation 0.7s ease-in-out
+			right: calc(-2em)
+	.leaf--left
+		animation: leftLeafAnimation 5s ease-in-out infinite
+	.leaf--right
+		animation: rightLeafAnimation 5s ease-in-out infinite
 
 .leaf
-	width: 28px
-	height: 14px
+	width: 1em
+	height: 0.5em
 
 .btn
 	@include font('proximanova', 14, 600)

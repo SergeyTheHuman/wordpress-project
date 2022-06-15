@@ -1,0 +1,25 @@
+.first-screen
+	@include background('@img/girl-light.jpg', cover)
+	// min-height: 31.25vw
+	// height: 600px
+	padding-bottom: 16.71%
+	border-radius: 10px
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__subtitle
+		font-size: 24px
+		margin: 10% 0 40px 0
+		@media screen and ( max-width: 768px )
+			font-size: 20px
+		@media screen and ( max-width: 480px )
+			font-size: 16px
+		svg
+			color: $color-white !important
+	&__title
+		@include font('El Messiri', 64, 700)
+		text-align: center
+		@media screen and ( max-width: 768px )
+			font-size: 40px
+		@media screen and ( max-width: 480px )
+			font-size: 30px
