@@ -1,2 +1,23 @@
+-
+	const menuList = [
+		'Главная',
+		'Сеансы',
+		'Отзывы',
+		'Контакты',
+		'Новости',
+		'Об нас',
+		'Блог',
+		'Об нас',
+	]
+
 header.header
-	
+	a.header__logo-link(href="#")
+		+svg('header__logo-svg', 'logo')
+	nav.header__nav
+		ul.header__list
+			each item in menuList
+				li.header__item
+					a.header__link(href="#")= item
+	button.header__button.btn.btn--blue Записаться на сеанс
+	.burger__button(data-burger-btn)
+		span
