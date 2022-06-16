@@ -88,6 +88,8 @@ html
 	text-align: center
 	display: inline-block
 	position: relative
+	@media screen and ( max-width: 768px )
+		font-size: 24px
 	.leaf
 		font-size: inherit
 		position: absolute
@@ -124,10 +126,11 @@ html
 	&--white
 		color: $color-lightblue
 		background: $color-white
-	&:hover
-		transform: scale(1.2)
-		border-radius: 15px
-		animation: fadeAnimation 0.3s ease-in-out
-	&:active
-		transform: scale(1.2) translateY(2px)
-		box-shadow: 4px 4px 2px 0px rgba(34, 60, 80, 0.5) inset
+	@media screen and ( min-width: 1023.98px )
+		&:hover
+			transform: scale(1.2)
+			border-radius: 15px
+			animation: fadeAnimation 0.3s ease-in-out
+		&:active
+			transform: scale(1.2) translateY(2px)
+			box-shadow: 4px 4px 2px 0px rgba(34, 60, 80, 0.5) inset

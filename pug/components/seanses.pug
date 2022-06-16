@@ -1,0 +1,17 @@
+-
+	const seansesItems = [
+		'Стандартный RitmStyle',
+		'RitmStyle для пар',
+		'RitmStyle с полным погружением под воду',
+		'RitmStyle для беременных',
+		'RitmStyle + красочная подводная фотосессия',
+	]
+
+section.seanses
+	h2.seanses__title.title Сеансы RitmStyle
+		+svg('leaf leaf--left', 'leaf--left')
+		+svg('leaf leaf--right', 'leaf--right')
+	.seanses__grid
+		each item in seansesItems
+			a.seanses__grid-item(href='#')
+				h4.seanses__grid-title= item
