@@ -1,25 +1,3 @@
-/*
-	Чтобы все работало нужно:
-	1) При инициализации передать селектор враппера всего аккордеона
-	2) Айтемам дать класс .accordion__item
-	3) Заголовкам дать класс .accordion__title
-	4) Контентным блокам дать класс .accordion__content
-	5) Айтемам в Sass дать высоту такую же, как и у заголовка .accordion__title
-
-	|---------------------|
-
-	Пример pug-структуры
-		.класс
-			.класс__item.accordion__item 
-				.класс__title.accordion__title Первый
-				.класс__content.accordion__content Первый блок
-			.класс__item.accordion__item 
-				.класс__title.accordion__title Второй
-				.класс__content.accordion__content Второй блок
-			.класс__item.accordion__item 
-				.класс__title.accordion__title Третий
-				.класс__content.accordion__content Третий блок 
-*/
 export class Accordion {
 	constructor(accordionWrapper, type = 'multi') {
 		this.type = type
