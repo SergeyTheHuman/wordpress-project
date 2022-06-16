@@ -18,14 +18,16 @@
 		font-size: 0.875rem
 		font-weight: 400
 		line-height: 1.35em
-		max-width: 700px
-		width: 100%
+		flex: 1 1 700px
 	&__list
 		display: flex
-		justify-content: space-between
+		justify-content: center
 		align-items: center
 		list-style: none
+		flex-wrap: wrap
 	&__item
+		&:not(:last-child)
+			margin-right: 5%
 	&__link
 		transition: $transition
 		&:hover
