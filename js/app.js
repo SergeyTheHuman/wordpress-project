@@ -47,8 +47,8 @@ const reviewsSwiper = new Swiper('.reviews__swiper', {
 
 function initYandexMap() {
 	let map = new ymaps.Map('address__map', {
-		center: [50.59130164348107, 36.58778729849953],
-		zoom: 17,
+		center: [59.93672823167039, 30.317486354025053],
+		zoom: 11,
 	})
 
 	map.controls.remove('geolocationControl') // удаляем геолокацию
@@ -58,10 +58,33 @@ function initYandexMap() {
 	map.controls.remove('fullscreenControl') // удаляем кнопку перехода в полноэкранный режим
 	map.controls.remove('rulerControl') // удаляем контрол правил
 
-	// Создание геообъекта с типом точка (метка).
-	const geoPoint = new ymaps.Placemark(
-		[50.59130164348107, 36.58778729849953],
-		{},
+	const geoPoint1 = new ymaps.Placemark(
+		[59.910095482416324, 30.319871964318526],
+		{
+			balloonContent: `
+				<div class="balloon"> 
+					<h5 class="balloon__name">Бассейн WorkClass</h5>
+					<div class="balloon__address">Невский 140</div>
+		 		</div>
+			`,
+		},
+		{
+			iconLayout: 'default#image',
+			iconImageHref: '../files/location.svg',
+			iconImageSize: [50, 50],
+			iconImageOffset: [-23, -60],
+		}
+	)
+	const geoPoint2 = new ymaps.Placemark(
+		[59.95844458821735, 30.29954774013346],
+		{
+			balloonContent: `
+				<div class="balloon"> 
+					<h5 class="balloon__name">Бассейн "На Гороховой"</h5>
+					<div class="balloon__address">3-й проезд Иванова</div>
+		 		</div>
+			`,
+		},
 		{
 			iconLayout: 'default#image',
 			iconImageHref: '../files/location.svg',
@@ -70,8 +93,8 @@ function initYandexMap() {
 		}
 	)
 
-	// Размещение геообъекта на карте.
-	map.geoObjects.add(geoPoint)
+	map.geoObjects.add(geoPoint1)
+	map.geoObjects.add(geoPoint2)
 }
 
 ymaps.ready(initYandexMap)

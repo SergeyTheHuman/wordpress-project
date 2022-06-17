@@ -151,3 +151,25 @@ html
 
 [class*="copyrights-pane"]
 	display: none !important
+[class*="balloon"]
+	color: $color-white !important
+	background-color: $color-lightblue !important
+	border-radius: 10px !important
+[class*="balloon"] *
+	color: $color-white !important
+[class*="balloon__tail"]
+	border-radius: 0px !important
+[class*="balloon__tail"]:after
+	background-color: $color-lightblue !important
+[class*="balloon__close-button"]
+	background: url('../files/close.svg') 0 0/contain no-repeat !important
+	width: 30px
+	height: 30px
+	opacity: 1 !important
+
+.balloon
+	background-color: $color-lightblue
+	&__name
+		@include font('El Messiri', 18, 700)
+	&__address
+		@include font('proximanova', 14, 600)
