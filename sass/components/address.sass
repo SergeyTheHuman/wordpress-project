@@ -1,0 +1,71 @@
+.address
+	padding-bottom: 100px
+	margin-top: 10%
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	@media screen and ( max-width: 768px )
+		margin-top: 60px
+	&__title
+		margin-bottom: 7.5%
+	&__grid
+		display: grid
+		width: 100%
+		grid-template-columns: repeat(3, 1fr)
+		grid-auto-rows: minmax(300px, auto)
+		column-gap: 4%
+		row-gap: 2%
+		@media screen and ( max-width: 768px )
+			grid-template-columns: repeat(2, 1fr)
+			grid-auto-rows: 1fr
+		@media screen and ( max-width: 600px )
+			grid-template-columns: 1fr
+			grid-auto-rows: auto
+	&__map
+		background-color: tomato
+		border-radius: 10px
+		grid-column: span 2
+		grid-row: span 2
+		@media screen and ( max-width: 768px )
+			grid-column: span 2
+			grid-row: span 1
+		@media screen and ( max-width: 600px )
+			min-height: 300px
+			grid-column: span 1
+	&__item
+		min-width: 300px
+		background: $color-lightblue
+		border-radius: 10px
+		padding: 35px 45px
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		@media screen and ( max-width: 768px )
+			min-width: unset
+		@media screen and ( max-width: 600px )
+			padding: 20px 25px
+		&-content
+			display: flex
+			justify-content: center
+			align-items: flex-start
+			flex-direction: column
+			gap: 25px
+			margin-bottom: 25px
+			@media screen and ( max-width: 600px )
+				gap: 15px
+		&-title
+			@include font('El Messiri', 24, 700)
+		&-li
+			display: flex
+			align-items: center
+		&-svg
+			margin-right: 20px
+			width: 20px
+			height: 20px
+		&-street,
+		&-metro,
+		&-visit
+			font-weight: 400
+			font-size: 14px
+		&-btn

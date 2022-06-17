@@ -1,0 +1,37 @@
+-
+	const addressesList = [
+		{
+			title: `Бассейн WorkClass`,
+			street: `Невский 140`,
+			metro: `м. Спасская`,
+			visit: `Запись по договоренности`,
+		},
+		{
+			title: `Бассейн "На Гороховой"`,
+			street: `3-й проезд Иванова`,
+			metro: `м. Крестовский остров`,
+			visit: `Запись по договоренности`,
+		},
+	]
+
+section.address
+	h2.address__title.title Как нас найти?
+		+svg('leaf leaf--left', 'leaf--left')
+		+svg('leaf leaf--right', 'leaf--right')
+	.address__grid
+		.address__map
+		each item in addressesList
+			.address__item
+				.address__item-content
+					.address__item-title= item.title
+					.address__item-li
+						+svg('address__item-svg', 'location')
+						.address__item-street= item.street
+					.address__item-li
+						+svg('address__item-svg', 'metro')
+						.address__item-metro= item.metro
+					.address__item-li
+						+svg('address__item-svg', 'calendar')
+						.address__item-visit= item.visit
+				button.btn.btn--white.address__item-btn Записаться на сеанс
+			
