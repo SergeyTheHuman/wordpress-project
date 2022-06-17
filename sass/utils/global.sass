@@ -155,6 +155,9 @@ html
 	color: $color-white !important
 	background-color: $color-lightblue !important
 	border-radius: 10px !important
+	@media screen and ( max-width: 584px )
+		border-bottom-right-radius: 0px !important
+		border-bottom-left-radius: 0px !important
 [class*="balloon"] *
 	color: $color-white !important
 [class*="balloon__tail"]
@@ -166,10 +169,14 @@ html
 	width: 30px
 	height: 30px
 	opacity: 1 !important
+[class*="-button"]
+	color: $color-black !important
 
 .balloon
 	background-color: $color-lightblue
+	padding-right: 10px
 	&__name
 		@include font('El Messiri', 18, 700)
+		margin-bottom: 10px
 	&__address
 		@include font('proximanova', 14, 600)
