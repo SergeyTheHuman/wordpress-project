@@ -1,14 +1,3 @@
-/*
-
-	
-	|---------------------|
-
-	
-	|---------------------|
-
-	
-*/
-
 export class Tabs {
 	constructor(tabsWrapper) {
 		this.tabs = document.querySelector(tabsWrapper)

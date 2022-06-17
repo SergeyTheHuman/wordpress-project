@@ -1,0 +1,71 @@
+.prices
+	margin-top: 10%
+	padding-bottom: 100px
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	@media screen and ( max-width: 768px )
+		margin-top: 60px
+	&__title
+		margin-bottom: 7.5%
+	&__content
+		width: 100%
+		max-width: 1100px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		@media screen and ( max-width: 767.98px )
+			flex-direction: column
+			gap: 30px
+	&__list,
+	&__card
+		flex: 0 0 50%
+	&__list
+		padding-right: 11.819%
+		@media screen and ( max-width: 767.98px )
+			padding-right: 0
+			width: 100%
+			max-width: 600px
+	&__card
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		gap: 30px
+		@media screen and ( max-width: 767.98px )
+			width: 100%
+			gap: 15px
+		&-image
+			flex: 1 1 100%
+		&-img
+			border-radius: 18px
+			width: 100%
+			min-height: 70%
+			object-fit: cover
+			object-position: center
+		&-label
+			@include font('El Messiri', 21, 700)
+			@media screen and ( max-width: 767.98px )
+				font-size: 18px
+	&__item
+		display: flex
+		align-items: center
+		font-size: 18px
+		@media screen and ( max-width: 767.98px )
+			font-size: 15px
+		&:not(:last-child)
+			margin-bottom: 30px
+		&-leaf
+			margin-right: 20px
+			color: $color-lightblue
+		&-title
+			font-weight: 400
+			padding-right: 2em
+		&-price
+			@include font('El Messiri', 18, 700)
+			justify-self: flex-end
+			text-align: right
+			margin-left: auto
+			@media screen and ( max-width: 767.98px )
+				font-size: 15px

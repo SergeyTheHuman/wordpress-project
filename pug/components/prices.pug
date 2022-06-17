@@ -1,0 +1,39 @@
+-
+	const pricesList = [
+		{
+			title: `RitmStyle с погружением`,
+			price: `1000р.`,
+		},
+		{
+			title: `Абонемент на RitmStyle`,
+			price: `5500р.`,
+		},
+		{
+			title: `RitmStyle для пар`,
+			price: `6000р.`,
+		},
+		{
+			title: `RitmStyle для беременных`,
+			price: `13500р.`,
+		},
+		{
+			title: `RitmStyle +  фотосессия`,
+			price: `11500р.`,
+		},
+	]
+
+section.prices
+	h2.prices__title.title Стоимость сеансов
+		+svg('leaf leaf--left', 'leaf--left')
+		+svg('leaf leaf--right', 'leaf--right')
+	.prices__content
+		ul.prices__list
+			each item in pricesList
+				li.prices__item
+					+svg('leaf leaf--left prices__item-leaf', 'leaf--left')
+					h5.prices__item-title= item.title
+					span.prices__item-price= item.price
+		.prices__card
+			.prices__card-image
+				img(src='@img/thanks.jpg').prices__card-img
+			.prices__card-label Подарочный сертификат 
