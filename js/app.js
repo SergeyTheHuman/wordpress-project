@@ -44,3 +44,34 @@ const reviewsSwiper = new Swiper('.reviews__swiper', {
 		},
 	},
 })
+
+function initYandexMap() {
+	let map = new ymaps.Map('address__map', {
+		center: [50.59130164348107, 36.58778729849953],
+		zoom: 17,
+	})
+
+	map.controls.remove('geolocationControl') // удаляем геолокацию
+	map.controls.remove('searchControl') // удаляем поиск
+	map.controls.remove('trafficControl') // удаляем контроль трафика
+	map.controls.remove('typeSelector') // удаляем тип
+	map.controls.remove('fullscreenControl') // удаляем кнопку перехода в полноэкранный режим
+	map.controls.remove('rulerControl') // удаляем контрол правил
+
+	// Создание геообъекта с типом точка (метка).
+	const geoPoint = new ymaps.Placemark(
+		[50.59130164348107, 36.58778729849953],
+		{},
+		{
+			iconLayout: 'default#image',
+			iconImageHref: '../files/location.svg',
+			iconImageSize: [50, 50],
+			iconImageOffset: [-23, -60],
+		}
+	)
+
+	// Размещение геообъекта на карте.
+	map.geoObjects.add(geoPoint)
+}
+
+ymaps.ready(initYandexMap)

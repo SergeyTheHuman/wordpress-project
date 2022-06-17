@@ -1,1 +1,52 @@
 .footer
+	margin-top: 6%
+	display: flex
+	justify-content: space-between
+	align-items: center
+	padding-bottom: 30px
+	@media screen and ( max-width: 768px )
+		margin-top: 35px
+	&__copyright
+		font-weight: 400
+		font-size: 14px
+		@media screen and ( max-width: 375px )
+			font-size: 12px
+	&__madeby
+		font-weight: 700
+		font-size: 14px
+		display: flex
+		justify-content: center
+		align-items: center
+		gap: 1em
+		@media screen and ( max-width: 375px )
+			font-size: 12px
+		&-github
+			transition: $transition
+			width: 2em
+			height: 2em
+			animation: scaleAnimation 6s ease 0s infinite
+			&:hover
+				animation-play-state: paused
+
+@keyframes scaleAnimation
+	0%
+		color: currentColor
+		transform: scale(1) rotate(0deg)
+	5%
+		color: $color-lightblue
+		transform: scale(1.2) rotate(45deg)
+	10%
+		color: $color-lightblue
+		transform: scale(0.8) rotate(45deg)
+	15%
+		color: $color-lightblue
+		transform: scale(1.2) rotate(-45deg)
+	20%
+		color: $color-lightblue
+		transform: scale(0.8) rotate(-45deg)
+	25%
+		color: currentColor
+		transform: scale(1) rotate(0deg)
+	100%
+		color: currentColor
+		transform: scale(1) rotate(0deg)

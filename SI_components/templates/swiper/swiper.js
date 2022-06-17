@@ -1,4 +1,5 @@
 //- Пример js-инициализации
+import Swiper from 'swiper/bundle'
 
 const swiper = new Swiper('.класс', {
 	slidesPerView: 2,
