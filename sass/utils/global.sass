@@ -90,6 +90,8 @@ html
 	position: relative
 	@media screen and ( max-width: 768px )
 		font-size: 24px
+	@media screen and ( max-width: 375px )
+		max-width: 180px
 	.leaf
 		font-size: inherit
 		position: absolute
@@ -141,13 +143,25 @@ html
 	transition: $transition
 	@media screen and ( min-width: 1023.98px )
 		&:hover
-			transform: perspective(500px) translateZ(50px)
+			transform: perspective(700px) translateZ(50px)
 			box-shadow: 0px 0px 30px 20px rgba(0,0,0, 0.5)
+	@media screen and ( max-width: 600px )
+		padding: 15px 20px
 	&__title
 		@include font('El Messiri', 24, 700)
 		line-height: 140%
 		@media screen and ( max-width: 768px )
 			font-size: 18px
+
+.date
+	font-weight: 700
+	font-size: 14px
+	padding: 6px 12px
+	background-color: $color-lightblue
+	width: fit-content
+	border-radius: 5px
+	@media screen and ( max-width: 600px )
+		font-size: 11px
 
 [class*="copyrights-pane"]
 	display: none !important

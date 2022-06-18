@@ -64,7 +64,7 @@ function initYandexMap() {
 			balloonContent: `
 				<div class="balloon"> 
 					<h5 class="balloon__name">Бассейн WorkClass</h5>
-					<div class="balloon__address">Невский 140</div>
+					<div class="balloon__address">Невский проспект, дом 140</div>
 		 		</div>
 			`,
 		},
@@ -81,7 +81,7 @@ function initYandexMap() {
 			balloonContent: `
 				<div class="balloon"> 
 					<h5 class="balloon__name">Бассейн "На Гороховой"</h5>
-					<div class="balloon__address">3-й проезд Иванова</div>
+					<div class="balloon__address">3-й проезд Иванова, дом 14, корпус 2</div>
 		 		</div>
 			`,
 		},

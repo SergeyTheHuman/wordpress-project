@@ -1,0 +1,36 @@
+-
+	const posts = [
+		{
+			date: '13.02.2022',
+			title: `Новый формат сеансов`,
+			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur rem a vero corporis delectus in nobis molestias odio porro, natus eligendi distinctio autem minima cupiditate quae aliquam reprehenderit vitae dicta tempore, eius aut possimus! Assumenda culpa facere a quasi laudantium ratione, laboriosam omnis fuga, minus incidunt unde odio dicta debitis delectus est? Corrupti soluta, a quos autem, ut reprehenderit in minima assumenda eveniet voluptas nam, laboriosam omnis culpa sint reiciendis aspernatur inventore esse. Neque quasi sapiente qui quis dolorum explicabo molestiae aspernatur nihil perspiciatis similique? Quasi corrupti adipisci assumenda sapiente!',
+			image: '@img/post-img.jpg'
+		},
+		{
+			date: '03.02.2022',
+			title: `Скидка 10% по бонусной карте`,
+			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium qui aspernatur exercitationem totam sequi accusamus omnis pariatur ratione iste inventore illo quis, consequatur sed mollitia corrupti accusantium, earum, quidem tempora.',
+			image: '@img/post-img.jpg'
+		},
+		{
+			date: '27.01.2022',
+			title: `Открытие нового бассейна`,
+			text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aperiam ut delectus laudantium minus quisquam corrupti tenetur explicabo molestiae numquam, iusto vel eligendi? Numquam facilis at labore commodi voluptas fuga a necessitatibus quia eaque sequi. Ipsam ullam facilis recusandae minima nisi tempora a quibusdam inventore, itaque molestiae, debitis illo. Libero, ipsam excepturi? Ducimus minima exercitationem repudiandae perferendis facere laboriosam quisquam, rerum eius adipisci repellendus alias consequuntur odio enim provident suscipit. Sunt corrupti accusamus quis quae!',
+			image: '@img/post-img.jpg'
+		},
+	]
+
+section.blog
+	.blog__title.title Блог
+		+svg('leaf leaf--left', 'leaf--left')
+		+svg('leaf leaf--right', 'leaf--right')
+	.blog__grid
+		each post in posts
+			.blog__item
+				.blog__item-image
+					img(src= post.image).blog__item-img
+				.blog__item-content
+					.blog__item-date.date= post.date
+					h4.blog__item-title= post.title
+					.blog__item-text= post.text
+					a(href='single-post.html').blog__item-btn.btn.btn--blue Читать статью

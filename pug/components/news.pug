@@ -1,0 +1,37 @@
+-
+	const newsItems = [
+		{
+			date: '13.02.2022',
+			title: `Новый формат сеансов`,
+		},
+		{
+			date: '03.02.2022',
+			title: `Скидка 10% по бонусной карте`,
+		},
+		{
+			date: '27.01.2022',
+			title: `Открытие нового бассейна`,
+		},
+		{
+			date: '22.01.2022',
+			title: `Набор новой группы для дайвинга`,
+		},
+		{
+			date: '16.01.2022',
+			title: `Новое оборудование для гидромассажа`,
+		},
+		{
+			date: '03.01.2022',
+			title: `Бонусная карта`,
+		},
+	]
+
+section.news
+	.news__title.title Новости
+		+svg('leaf leaf--left', 'leaf--left')
+		+svg('leaf leaf--right', 'leaf--right')
+	.news__grid
+		each item in newsItems
+			.news__item.item
+				.news__item-date.date= item.date
+				.news__item-title.item__title= item.title

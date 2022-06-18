@@ -1,22 +1,43 @@
 -
 	const menuList = [
-		'Главная',
-		'Сеансы',
-		'Отзывы',
-		'Контакты',
-		'Новости',
-		'О нас',
-		'Блог',
+		{
+			text: 'Главная',
+			link: '/'
+		},
+		{
+			text: 'Сеансы',
+			link: '/'
+		},
+		{
+			text: 'Отзывы',
+			link: '/'
+		},
+		{
+			text: 'Контакты',
+			link: '/'
+		},
+		{
+			text: 'Новости',
+			link: 'news.html'
+		},
+		{
+			text: 'О нас',
+			link: '/'
+		},
+		{
+			text: 'Блог',
+			link: 'blog.html'
+		},
 	]
 
 header.header
-	a.header__logo-link(href="#")
+	a.header__logo-link(href="/")
 		+svg('header__logo-svg', 'logo')
 	nav.header__nav
 		ul.header__list
 			each item in menuList
 				li.header__item
-					a.header__link(href="#")= item
+					a.header__link(href= item.link)= item.text
 	button.header__button.btn.btn--blue Записаться на сеанс
 	.burger__button(data-burger-btn)
 		span

@@ -1,0 +1,19 @@
+doctype html
+html(lang="ru")
+	head
+		include utils/mixins
+		include utils/meta
+		link(rel="stylesheet", href="https://unpkg.com/swiper@8/swiper-bundle.min.css")
+		link(rel="stylesheet", href="css/style.min.css")
+		link(rel="shortcut icon", href="files/favicon.ico")
+		include utils/fonts
+		title Blog Page
+	body
+		.wrapper._lines
+			include components/header
+
+			include components/blog
+
+			include components/footer
+		script(src="https://api-maps.yandex.ru/2.1/?apikey=e2a57b7e-656f-493c-941e-fb1a44daefc4&lang=ru_RU")
+		script(src='js/app.min.js')

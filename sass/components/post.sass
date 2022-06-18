@@ -1,0 +1,53 @@
+.post
+	margin-top: 6%
+	margin-bottom: 9%
+	display: flex
+	justify-content: center
+	align-items: center
+	flex-direction: column
+	@media screen and ( max-width: 768px )
+		margin-top: 60px
+		margin-bottom: 60px
+	&__title
+		margin-bottom: 5%
+
+	&__item
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		@media screen and ( max-width: 900px )
+			flex-direction: column
+			align-items: unset
+			gap: 30px
+		&-content
+			flex: 0 1 46%
+			@media screen and ( max-width: 900px )
+				flex: unset
+		&-image
+			flex: 0 0 48%
+			@media screen and ( max-width: 900px )
+				flex: unset
+		&-img
+			min-height: 300px
+			max-height: 400px
+			height: 100%
+			width: 100%
+			border-radius: 20px
+			object-fit: cover
+			object-position: center
+			@media screen and ( max-width: 900px )
+				min-height: 200px
+		&-date
+			margin-bottom: 30px
+			@media screen and ( max-width: 800px )
+				margin-bottom: 20px
+		&-title
+			@include font('El Messiri', 24, 700)
+			margin-bottom: 1em
+			@media screen and ( max-width: 800px )
+				font-size: 18px
+		&-text
+			font-size: 16px
+			@media screen and ( max-width: 480px )
+				font-size: 14px
