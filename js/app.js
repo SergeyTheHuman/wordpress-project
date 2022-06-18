@@ -1,11 +1,93 @@
 import { isWebp } from './components/isWebp.js'
+import { Modal } from './components/modal.js'
 import Swiper from 'swiper/bundle'
+import 'inputmask'
+import JustValidate from 'just-validate'
+
+const inputsTel = document.querySelectorAll('input[type="tel"]')
+const telMask = new Inputmask('+7 (999) 999-99-99')
+telMask.mask(inputsTel)
+
+const connectValidation = new JustValidate('.connect-form')
+connectValidation
+	.addField('#formTel', [
+		{
+			rule: 'required',
+			errorMessage: 'Пожалуйста, введите ваш телефон',
+			errorFieldStyle: {
+				border: '1px solid red',
+			},
+		},
+	])
+	.addField('#formName', [
+		{
+			rule: 'required',
+			errorMessage: 'Пожалуйста, введите ваше имя',
+			errorFieldStyle: {
+				border: '1px solid red',
+			},
+		},
+	])
+	.addField('#formEmail', [
+		{
+			rule: 'required',
+			errorMessage: 'Пожалуйста, введите адрес электронной почты',
+			errorFieldStyle: {
+				border: '1px solid red',
+			},
+		},
+		{
+			rule: 'email',
+			errorMessage: 'Данный адрес электронной почты введен не корректно!',
+			errorFieldStyle: {
+				border: '1px solid red',
+			},
+		},
+	])
 
 isWebp()
 
 const $burgerBtn = document.querySelector('[data-burger-btn]')
 const $menu = document.querySelector('.header__nav')
 const $body = document.body
+const $links = document.querySelectorAll('a[data-path]')
+const $forms = document.querySelectorAll('form')
+
+$forms.forEach((form) =>
+	form.addEventListener('submit', (e) => {
+		e.preventDefault()
+		if (connectValidation.isValid) {
+			form.reset()
+			connectUsModal.closeModal(connectUsModal.activeModal)
+			setTimeout(() => {
+				alert('Сообщение отправлено, спасибо!')
+			}, 500)
+		}
+	})
+)
+
+$links.forEach((link) =>
+	link.addEventListener('click', (e) => {
+		const currentLink = e.target
+		if (currentLink.dataset.path) {
+			e.preventDefault()
+			const sectionID = currentLink.dataset.path
+			if ($menu.classList.contains('header__nav--opened')) {
+				$burgerBtn.classList.remove('burger__button--active')
+				$menu.classList.remove('header__nav--opened')
+				$body.classList.remove('scroll-lock')
+			}
+			if (e.target.closest('._lines')) {
+				window.location.href = `index.html#${sectionID}`
+				return
+			}
+
+			document.getElementById(sectionID).scrollIntoView({
+				behavior: 'smooth',
+			})
+		}
+	})
+)
 
 $burgerBtn.addEventListener('click', (e) => {
 	$burgerBtn.classList.toggle('burger__button--active')
@@ -98,3 +180,5 @@ function initYandexMap() {
 }
 
 ymaps.ready(initYandexMap)
+
+const connectUsModal = new Modal()

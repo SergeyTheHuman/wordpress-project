@@ -1,0 +1,155 @@
+.connect-modal
+	position: fixed
+	width: 100%
+	height: 100%
+	top: 0
+	left: 0
+	display: flex
+	justify-content: center
+	align-items: center
+	background-color: rgba(0, 0, 0, 0.8)
+	opacity: 0
+	visibility: hidden
+	transition: $transition
+	&__body
+		background-color: $color-lightblue
+		color: $color-white
+		max-width: 50vw
+		min-height: 300px
+		max-height: 90vh
+		border-radius: 20px
+		padding: 30px
+		position: relative
+		transform: translateY(-200%) scale(0)
+		transition: all .7s ease-in-out
+		overflow-y: auto
+		overflow-x: hidden
+		@media screen and ( max-width: 767.98px )
+			padding: 20px
+			max-width: 75vw
+	&__close
+		@include background('../files/close.svg', contain)
+		position: absolute
+		top: 20px
+		right: 20px
+		width: 50px
+		height: 50px
+		cursor: pointer
+		@media screen and ( max-width: 767.98px )
+			top: 10px
+			right: 10px
+		@media screen and ( max-width: 600px )
+			top: 5px
+			right: 5px
+			width: 40px
+			height: 40px
+	&__title
+		@include font('El Messiri', 24, 700)
+		line-height: 140%
+		margin-bottom: 1em
+		@media screen and ( max-width: 600px )
+			font-size: 20px
+.connect-form
+	display: flex
+	justify-content: center
+	flex-direction: column
+	gap: 20px
+	&__item
+		display: flex
+		justify-content: center
+		flex-direction: column
+		gap: 5px
+	&__label
+		@include font('proximanova', 16, 300)
+		line-height: 140%
+	&__input
+		transition: $transition
+		padding: 10px
+		border-radius: 10px
+		border: none
+		@include font('proximanova', 16, 400)
+		line-height: 140%
+		&:focus
+			outline: 3px solid rgba($color-darkblue, 0.5)
+	textarea.connect-form__input
+		min-height: 70px
+		max-height: 180px
+		resize: vertical
+	&__agreement
+		@include font('proximanova', 12, 400)
+		line-height: 140%
+		opacity: .8
+	&__button
+		@media screen and ( min-width: 1023.98px )
+		&:hover
+			transform: scale(1)
+			border-radius: 15px
+			animation: fadeAnimation 0.3s ease-in-out
+		&:active
+			transform: scale(1) translateY(2px)
+			box-shadow: 4px 4px 2px 0px rgba(34, 60, 80, 0.5) inset
+
+.just-validate-error-label
+	color: tomato !important
+	@include font('proximanova', 16, 700)
+	line-height: 140%
+.just-validate-error-field
+	box-shadow: 0px 0px 10px 5px rgba(tomato, 1)
+.just-validate-success-field
+	box-shadow: 0px 0px 10px 5px rgba(80, 227, 117, 0.6)
+	
+.modal--opened // Обязательный класс
+	opacity: 1
+	visibility: visible
+	.connect-modal__body
+		transform: translateY(0) scale(1)
+
+.lock-scroll // Обязательный класс
+	overflow-y: hidden
+
+::-webkit-input-placeholder
+	color: $color-lightblue
+	font-weight: 600
+::-moz-placeholder
+	color: $color-lightblue
+	font-weight: 600
+:-moz-placeholder
+	color: $color-lightblue
+	font-weight: 600
+:-ms-input-placeholder
+	color: $color-lightblue
+	font-weight: 600
+
+@media screen and ( min-width: 767.98px )
+	.connect-form__input::-webkit-input-placeholder
+		text-indent: 0px
+		opacity: 1
+		transition: text-indent 0.3s ease
+	.connect-form__input::-moz-placeholder
+		text-indent: 0px
+		opacity: 1
+		transition: text-indent 0.3s ease
+	.connect-form__input:-moz-placeholder
+		text-indent: 0px
+		opacity: 1
+		transition: text-indent 0.3s ease
+	.connect-form__input:-ms-input-placeholder
+		text-indent: 0px
+		opacity: 1
+		transition: text-indent 0.3s ease
+	.connect-form__input:focus::-webkit-input-placeholder
+		text-indent: 300px
+		opacity: 0
+		transition: all 0.3s ease
+	.connect-form__input:focus::-moz-placeholder
+		text-indent: 300px
+		opacity: 0
+		transition: all 0.3s ease
+	.connect-form__input:focus:-moz-placeholder
+		text-indent: 300px
+		opacity: 0
+		transition: all 0.3s ease
+	.connect-form__input:focus:-ms-input-placeholder
+		text-indent: 300px
+		opacity: 0
+		transition: all 0.3s ease

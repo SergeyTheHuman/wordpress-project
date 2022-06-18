@@ -1,0 +1,21 @@
+.connect-modal(data-modal-target='first' data-modal-close)
+	.connect-modal__body
+		.connect-modal__close(data-modal-close)
+		h3.connect-modal__title Связаться с нами
+		form.connect-modal__form.connect-form
+			input(type="hidden" name='admin_email[]' value='5214688@mail.ru')
+			input(type="hidden" name='form_subject' value='Заявка с RytmStyle')
+			.connect-form__item
+				label.connect-form__label(for="formName") Введите имя
+				input#formName(type="text" name='name' placeholder='Имя...').connect-form__input
+			.connect-form__item
+				label.connect-form__label(for="formName") Введите телефон
+				input#formTel(type="tel" name='tel' placeholder='Телефон...').connect-form__input
+			.connect-form__item
+				label.connect-form__label(for="formEmail") Введите адрес электронной почты
+				input#formEmail(type="text" name='email' placeholder='E-mail...').connect-form__input
+			.connect-form__item
+				label.connect-form__label(for="formMessage") Введите сообщение
+				textarea#formMessage(name="message" placeholder='Сообщение...').connect-form__input
+			p.connect-form__agreement Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.
+			button.btn.btn--white.connect-form__button(type='submit') Отправить

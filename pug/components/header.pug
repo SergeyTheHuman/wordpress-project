@@ -2,31 +2,38 @@
 	const menuList = [
 		{
 			text: 'Главная',
+			dataPath: '',
 			link: '/'
 		},
 		{
 			text: 'Сеансы',
-			link: '/'
+			dataPath: 'seanses',
+			link: '#'
 		},
 		{
 			text: 'Отзывы',
-			link: '/'
+			dataPath: 'reviews',
+			link: '#'
 		},
 		{
 			text: 'Контакты',
-			link: '/'
+			dataPath: 'address',
+			link: '#'
 		},
 		{
 			text: 'Новости',
-			link: 'news.html'
+			dataPath: '',
+			link: 'news-page.html'
 		},
 		{
 			text: 'О нас',
-			link: '/'
+			dataPath: 'about',
+			link: '#'
 		},
 		{
 			text: 'Блог',
-			link: 'blog.html'
+			dataPath: '',
+			link: 'blog-page.html'
 		},
 	]
 
@@ -37,7 +44,7 @@ header.header
 		ul.header__list
 			each item in menuList
 				li.header__item
-					a.header__link(href= item.link)= item.text
-	button.header__button.btn.btn--blue Записаться на сеанс
+					a.header__link(data-path=item.dataPath href= item.link)= item.text
+	button(data-modal-path='first').header__button.btn.btn--blue Записаться на сеанс
 	.burger__button(data-burger-btn)
 		span

@@ -7,11 +7,11 @@
 		'RitmStyle + красочная подводная фотосессия',
 	]
 
-section.seanses
+section.seanses#seanses
 	h2.seanses__title.title Сеансы RitmStyle
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
 	.seanses__grid
 		each item in seansesItems
-			a.seanses__grid-item.item(href='#')
+			.seanses__grid-item.item(href='#')
 				h4.seanses__grid-title.item__title= item

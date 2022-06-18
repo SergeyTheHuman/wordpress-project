@@ -14,7 +14,7 @@
 		},
 	]
 
-section.address
+section.address#address
 	h2.address__title.title Как нас найти?
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
@@ -33,4 +33,4 @@ section.address
 					.address__item-li
 						+svg('address__item-svg', 'calendar')
 						.address__item-visit= item.visit
-				button.btn.btn--white.address__item-btn Записаться на сеанс
+				button(data-modal-path='first').btn.btn--white.address__item-btn Записаться на сеанс
