@@ -36,10 +36,18 @@ export class Modal {
 	}
 
 	openModal(modal) {
+		const forms = modal.querySelectorAll('form')
+		if (forms) {
+			forms.forEach((form) => form.reset())
+		}
 		modal.classList.add('modal--opened')
 		this.activeModal = modal
 	}
 	closeModal(modal) {
+		const forms = modal.querySelectorAll('form')
+		if (forms) {
+			forms.forEach((form) => form.reset())
+		}
 		modal.classList.remove('modal--opened')
 		this.activeModal = null
 	}

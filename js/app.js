@@ -58,6 +58,7 @@ $forms.forEach((form) =>
 		e.preventDefault()
 		if (connectValidation.isValid) {
 			form.reset()
+			connectValidation.refresh()
 			connectUsModal.closeModal(connectUsModal.activeModal)
 			setTimeout(() => {
 				alert('Сообщение отправлено, спасибо!')
@@ -65,6 +66,18 @@ $forms.forEach((form) =>
 		}
 	})
 )
+
+window.addEventListener('click', (e) => {
+	if (e.target.hasAttribute('data-modal-close')) {
+		connectValidation.refresh()
+	}
+})
+
+window.addEventListener('keydown', (e) => {
+	if (e.code === 'Escape' || e.keyCode === 27) {
+		connectValidation.refresh()
+	}
+})
 
 $links.forEach((link) =>
 	link.addEventListener('click', (e) => {

@@ -82,11 +82,11 @@
 	&__button
 		@media screen and ( min-width: 1023.98px )
 		&:hover
-			transform: scale(1)
+			transform: scale(1) !important
 			border-radius: 15px
 			animation: fadeAnimation 0.3s ease-in-out
 		&:active
-			transform: scale(1) translateY(2px)
+			transform: scale(1) translateY(2px) !important
 			box-shadow: 4px 4px 2px 0px rgba(34, 60, 80, 0.5) inset
 
 .just-validate-error-label
@@ -97,7 +97,7 @@
 	box-shadow: 0px 0px 10px 5px rgba(tomato, 1)
 .just-validate-success-field
 	box-shadow: 0px 0px 10px 5px rgba(80, 227, 117, 0.6)
-	
+
 .modal--opened // Обязательный класс
 	opacity: 1
 	visibility: visible
