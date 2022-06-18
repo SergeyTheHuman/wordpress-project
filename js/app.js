@@ -60,6 +60,7 @@ $forms.forEach((form) =>
 			form.reset()
 			connectValidation.refresh()
 			connectUsModal.closeModal(connectUsModal.activeModal)
+			connectUsModal.bodyUnlock()
 			setTimeout(() => {
 				alert('Сообщение отправлено, спасибо!')
 			}, 500)
