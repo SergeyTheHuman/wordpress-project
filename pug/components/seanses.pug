@@ -8,10 +8,13 @@
 	]
 
 section.seanses#seanses
-	h2.seanses__title.title Сеансы RitmStyle
+	h2(data-aos="fade-down").seanses__title.title Сеансы RitmStyle
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
 	.seanses__grid
+		- let seansesDelay = 0
 		each item in seansesItems
-			.seanses__grid-item.item(href='#')
-				h4.seanses__grid-title.item__title= item
+			- seansesDelay += 100
+			.seanses__grid-wrapper(data-aos="zoom-in-down" data-aos-delay=seansesDelay)
+				.seanses__grid-item.item
+					h4.seanses__grid-title.item__title= item

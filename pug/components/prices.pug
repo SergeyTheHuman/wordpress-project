@@ -23,17 +23,19 @@
 	]
 
 section.prices
-	h2.prices__title.title Стоимость сеансов
+	h2.prices__title.title(data-aos="fade-up") Стоимость сеансов
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
 	.prices__content
+		- let pricesDelay = 0
 		ul.prices__list
 			each item in pricesList
-				li.prices__item
+				li.prices__item(data-aos="fade-right" data-aos-delay=pricesDelay)
 					+svg('leaf leaf--left prices__item-leaf', 'leaf--left')
 					h5.prices__item-title= item.title
 					span.prices__item-price= item.price
+				- pricesDelay += 100
 		.prices__card
-			.prices__card-image
+			.prices__card-image(data-aos="fade-left" data-aos-delay=pricesDelay+150)
 				img(src='@img/thanks.jpg').prices__card-img
-			.prices__card-label Подарочный сертификат 
+			.prices__card-label(data-aos="fade-left" data-aos-delay=pricesDelay+300) Подарочный сертификат 

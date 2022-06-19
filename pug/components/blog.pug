@@ -21,16 +21,19 @@
 	]
 
 section.blog
-	.blog__title.title Блог
+	.blog__title.title(data-aos="fade-up") Блог
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
 	.blog__grid
 		each post in posts
-			.blog__item
-				.blog__item-image
+			- let postDelay = 100
+			- postDelay += 100
+			.blog__item(data-aos="zoom-in" data-aos-delay=200)
+				.blog__item-image(data-aos="fade-right" data-aos-delay=400)
 					img(src= post.image).blog__item-img
-				.blog__item-content
-					.blog__item-date.date= post.date
-					h4.blog__item-title= post.title
-					.blog__item-text= post.text
-					a(href='post-page.html').blog__item-btn.btn.btn--blue Читать статью
+				.blog__item-content(data-aos="fade-left" data-aos-delay=600)
+					.blog__item-date.date(data-aos="fade-left" data-aos-delay=700)= post.date
+					h4.blog__item-title(data-aos="fade-left" data-aos-delay=800)= post.title
+					.blog__item-text(data-aos="fade-left" data-aos-delay=900)= post.text
+					.blog__item-wrapper(data-aos="fade-left" data-aos-delay=1000)
+						a(href='post-page.html').blog__item-btn.btn.btn--blue Читать статью

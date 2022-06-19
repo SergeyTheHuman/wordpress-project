@@ -3,6 +3,7 @@ import { Modal } from './components/modal.js'
 import Swiper from 'swiper/bundle'
 import 'inputmask'
 import JustValidate from 'just-validate'
+import AOS from 'aos'
 
 const inputsTel = document.querySelectorAll('input[type="tel"]')
 const telMask = new Inputmask('+7 (999) 999-99-99')
@@ -46,6 +47,15 @@ connectValidation
 	])
 
 isWebp()
+AOS.init({
+	disable: 'mobile', // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+	startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+	// Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+	offset: 120, // offset (in px) from the original trigger point
+	delay: 0, // values from 0 to 3000, with step 50ms
+	duration: 400, // values from 0 to 3000, with step 50ms
+	easing: 'ease', // default easing for AOS animations
+})
 
 const $burgerBtn = document.querySelector('[data-burger-btn]')
 const $menu = document.querySelector('.header__nav')

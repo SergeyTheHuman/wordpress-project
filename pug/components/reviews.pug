@@ -28,13 +28,13 @@
 
 
 section.reviews#reviews
-	.reviews__title.title Отзывы
+	.reviews__title.title(data-aos="fade-down") Отзывы
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
-	.reviews__swiper
+	.reviews__swiper#reviews__swiper(data-aos="zoom-out")
 		.swiper-wrapper
 			each slide in reviewsSlides
 				.swiper-slide 
 					.swiper-slide__name= slide.name
 					.swiper-slide__text= slide.text
-	.reviews__swiper-pagination
+	.reviews__swiper-pagination(data-aos="zoom-out-down" data-aos-delay=300 data-aos-anchor="#reviews__swiper")

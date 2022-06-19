@@ -15,22 +15,25 @@
 	]
 
 section.address#address
-	h2.address__title.title Как нас найти?
+	h2.address__title.title(data-aos="fade-up") Как нас найти?
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
 	.address__grid
-		.address__map#address__map
+		- let addressDelay = 200
+		.address__map#address__map(data-aos="fade-right")
 		each item in addressesList
-			.address__item
+			.address__item(data-aos="fade-left" data-aos-delay=addressDelay)
 				.address__item-content
-					.address__item-title= item.title
-					.address__item-li
+					.address__item-title(data-aos="fade-left" data-aos-delay=addressDelay+50)= item.title
+					.address__item-li(data-aos="fade-left" data-aos-delay=addressDelay+100)
 						+svg('address__item-svg', 'location')
 						.address__item-street= item.street
-					.address__item-li
+					.address__item-li(data-aos="fade-left" data-aos-delay=addressDelay+150)
 						+svg('address__item-svg', 'metro')
 						.address__item-metro= item.metro
-					.address__item-li
+					.address__item-li(data-aos="fade-left" data-aos-delay=addressDelay+200)
 						+svg('address__item-svg', 'calendar')
 						.address__item-visit= item.visit
-				button(data-modal-path='first').btn.btn--white.address__item-btn Записаться на сеанс
+				.address__button-wrapper(data-aos="fade-left" data-aos-delay=addressDelay+250)
+					button(data-modal-path='first').btn.btn--white.address__item-btn Записаться на сеанс
+			- addressDelay += 500

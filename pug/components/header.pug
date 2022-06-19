@@ -3,7 +3,7 @@
 		{
 			text: 'Главная',
 			dataPath: '',
-			link: 'index.html'
+			link: 'index.html',
 		},
 		{
 			text: 'Сеансы',
@@ -38,13 +38,17 @@
 	]
 
 header.header
-	a.header__logo-link(href="index.html")
-		+svg('header__logo-svg', 'logo')
+	- let delay = 200;
+	.header__logo-wrapper(data-aos="fade-down" data-aos-delay=delay-100)
+		a.header__logo-link(href="index.html")
+			+svg('header__logo-svg', 'logo')
 	nav.header__nav
 		ul.header__list
 			each item in menuList
-				li.header__item
-					a.header__link(data-path=item.dataPath href= item.link)= item.text
-	button(data-modal-path='first').header__button.btn.btn--blue Записаться на сеанс
+				- delay += 100
+				li.header__item(data-aos="fade-down" data-aos-delay=delay)
+					a.header__link(data-path=item.dataPath href=item.link)= item.text
+	.header__button-wrapper(data-aos="fade-down" data-aos-delay=delay+100)
+		button(data-modal-path='first').header__button.btn.btn--blue Записаться на сеанс
 	.burger__button(data-burger-btn)
 		span

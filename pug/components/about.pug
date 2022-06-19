@@ -18,14 +18,16 @@
 	]
 
 section.about#about
-	h2.about__title.title Об RitmStyle
+	h2(data-aos="zoom-in-down").about__title.title Об RitmStyle
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
+	- let aboutDelay = 0
 	each item in aboutItems
 		.about__item
-			.about__item-content
+			.about__item-content(data-aos="fade-up" data-aos-delay=aboutDelay)
 				.about__item-title= item.title
 				.about__item-text= item.text
-			.about__item-photo
+			- aboutDelay += 150
+			.about__item-photo(data-aos="fade-up" data-aos-delay=aboutDelay)
 				img.about__item-img(src= item.img alt='photo')
 

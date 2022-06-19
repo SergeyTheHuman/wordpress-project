@@ -27,11 +27,14 @@
 	]
 
 section.news
-	.news__title.title Новости
+	.news__title.title(data-aos="fade-up") Новости
 		+svg('leaf leaf--left', 'leaf--left')
 		+svg('leaf leaf--right', 'leaf--right')
+	- let newsDelay = 100
 	.news__grid
 		each item in newsItems
-			.news__item.item
-				.news__item-date.date= item.date
-				.news__item-title.item__title= item.title
+			.news__item-wrapper(data-aos="zoom-in" data-aos-delay=newsDelay)
+				.news__item.item
+					.news__item-date.date(data-aos="zoom-in" data-aos-delay=newsDelay+100)= item.date
+					.news__item-title.item__title(data-aos="zoom-in" data-aos-delay=newsDelay+200)= item.title
+			- newsDelay += 100
