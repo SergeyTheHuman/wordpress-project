@@ -9,9 +9,13 @@
 	&__title
 		margin-bottom: 7.5%
 	&__item
+		width: 100%
 		max-width: 1100px
 		display: flex
+		align-items: center
+		justify-content: space-between
 		@media screen and ( max-width: 768px )
+			align-items: unset
 			gap: 20px
 			flex-direction: column
 		&:not(:last-child)
@@ -20,13 +24,14 @@
 			flex-direction: row-reverse
 			.about__item-content
 				padding-right: 0
-				padding-left: 7%
+				padding-left: 4%
 			@media screen and ( max-width: 768px )
 				flex-direction: column
 				.about__item-content
 					padding-left: 0
 		&-content
-			padding-right: 7%
+			padding-right: 4%
+			flex: 0 0 48%
 			display: flex
 			justify-content: center
 			align-items: flex-start
@@ -41,10 +46,16 @@
 			font-weight: 300
 			font-size: 16px
 		&-photo
-			flex: 0 0 47.8%
+			flex: 0 0 48%
+			width: 100%
+			max-height: 400px
 		&-img
 			border-radius: 18px
+			height: 100%
 			width: 100%
 			min-height: 70%
+			max-height: 400px
 			object-fit: cover
 			object-position: center
+			@media screen and (max-width: 480px)
+				max-height: 250px
